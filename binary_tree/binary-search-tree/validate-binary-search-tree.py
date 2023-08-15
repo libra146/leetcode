@@ -10,8 +10,8 @@ class Solution:
     def isValid(self, root: Optional[TreeNode], max_val, min_val):
         if root is None:
             return True
-        if max_val is not None and root.val < max_val.val:
+        if max_val is not None and root.val <= max_val.val:
             return False
-        if min_val is not None and root.val > min_val.val:
+        if min_val is not None and root.val >= min_val.val:
             return False
         return self.isValid(root.left, max_val, root) and self.isValid(root.right, root, min_val)
