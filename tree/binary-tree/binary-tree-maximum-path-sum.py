@@ -21,4 +21,5 @@ class Solution:
         left = left if left > 0 else 0
         right = right if right > 0 else 0
         self.res = max(self.res, root.val + left + right)
+        # 取的是当前节点和最大的子节点，不是路径
         return root.val + max(left, right)
