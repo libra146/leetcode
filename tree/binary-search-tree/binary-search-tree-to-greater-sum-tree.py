@@ -1,19 +1,27 @@
-from typing import Optional
-
 from utils import TreeNode
 
 
+# leetcode submit region begin(Prohibit modification and deletion)
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
 class Solution:
-    num = 0
+    def __init__(self):
+        self.res = []
 
-    def convertBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        self.traverse(root)
+    def bstToGst(self, root: TreeNode) -> TreeNode:
+        self.dfs(root)
         return root
 
-    def traverse(self, node: Optional[TreeNode]):
-        if not node:
+    def dfs(self, root):
+        if not root:
             return
-        self.traverse(node.right)
-        self.num += node.val
-        node.val = self.num
-        self.traverse(node.left)
+        self.dfs(root.right)
+        self.res.append(root.val)
+        root.val = sum(self.res)
+        self.dfs(root.left)
+
+# leetcode submit region end(Prohibit modification and deletion)
