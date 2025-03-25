@@ -1,15 +1,10 @@
-[tool.poetry]
+[project]
 name = "leetcode"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = "~=3.12"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.10"
-pytest = "^7.4.0"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+dependencies = [
+    "pip>=25.0.1",
+]
